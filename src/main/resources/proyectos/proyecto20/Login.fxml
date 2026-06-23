@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="553.0" prefWidth="466.0" spacing="20.0" style="-fx-background-color: #060042;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectos.proyecto20.login.LoginController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label prefHeight="31.0" prefWidth="258.0" text="BIENVENIDOS AL REGISTRO DE PARTICIPANTES " textFill="WHITE" />
+   <Label text="CAMPEONATO DE VIDEOJUEGOS DE PELEAS" textFill="WHITE" />
+   <ImageView fitHeight="135.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../java/proyectos/proyecto20/imagenes/LogoCampeonato.png" />
+      </image>
+   </ImageView>
+   <HBox prefHeight="19.0" prefWidth="426.0">
+      <children>
+         <Label text="Usuario:" textFill="WHITE" />
+      </children>
+   </HBox>
+   <HBox prefHeight="22.0" prefWidth="426.0">
+      <children>
+         <TextField fx:id="txtUsuario" prefHeight="25.0" prefWidth="306.0" style="-fx-background-color: #C5C7ED;" />
+      </children>
+   </HBox>
+   <HBox prefHeight="21.0" prefWidth="426.0">
+      <children>
+         <Label text="Contraseña:" textFill="WHITE" />
+      </children>
+   </HBox>
+   <HBox prefHeight="30.0" prefWidth="426.0">
+      <children>
+         <PasswordField fx:id="txtContrasena" prefHeight="25.0" prefWidth="309.0" style="-fx-background-color: #C5C7ED;" />
+      </children>
+   </HBox>
+   <HBox prefHeight="45.0" prefWidth="426.0">
+      <children>
+         <HBox prefHeight="44.0" prefWidth="32.0" />
+         <HBox prefHeight="44.0" prefWidth="139.0">
+            <children>
+               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ingresar" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #5000BD;" text="Ingresar" textFill="WHITE" />
+            </children>
+         </HBox>
+         <HBox prefHeight="44.0" prefWidth="38.0" />
+         <HBox prefHeight="44.0" prefWidth="180.0">
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #160029;" text="Salir" textFill="WHITE" />
+            </children>
+         </HBox>
+      </children>
+   </HBox>
+</VBox>

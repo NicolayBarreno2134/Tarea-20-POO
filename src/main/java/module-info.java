@@ -6,4 +6,6 @@ module proyectos.proyecto20 {
 
     opens proyectos.proyecto20 to javafx.fxml;
     exports proyectos.proyecto20;
+    exports proyectos.proyecto20.login;
+    opens proyectos.proyecto20.login to javafx.fxml;
 }
