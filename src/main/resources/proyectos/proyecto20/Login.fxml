@@ -11,7 +11,7 @@
     </padding>
    <Label prefHeight="31.0" prefWidth="258.0" text="BIENVENIDOS AL REGISTRO DE PARTICIPANTES " textFill="WHITE" />
    <Label text="CAMPEONATO DE VIDEOJUEGOS DE PELEAS" textFill="WHITE" />
-   <ImageView fitHeight="135.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="135.0" fitWidth="253.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../../../java/proyectos/proyecto20/imagenes/LogoCampeonato.png" />
       </image>

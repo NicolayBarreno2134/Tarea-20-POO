@@ -184,8 +184,8 @@ public class CRUDController {
         int edad;
         try {
             edad = Integer.parseInt(txtEdad.getText());
-            if (edad < 5) {
-                mostrarAlerta("La edad debe ser mayor a 5 años.", Alert.AlertType.WARNING);
+            if (edad < 18) {
+                mostrarAlerta("La edad debe ser mayor a 18 años.", Alert.AlertType.WARNING);
                 return false;
             }
         } catch (NumberFormatException e) {

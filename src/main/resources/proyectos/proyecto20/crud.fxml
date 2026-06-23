@@ -49,10 +49,10 @@
                 <TableColumn fx:id="colApellido" text="Apellido" />
                 <TableColumn fx:id="colEdad" text="Edad" />
                 <TableColumn fx:id="colCorreo" text="Correo" />
-                <TableColumn fx:id="colEstadoCivil" text="Forma de Juego" />
-                <TableColumn fx:id="colJornada" text="Jornada" />
-                <TableColumn fx:id="colCategoria" text="Categoría" />
-                <TableColumn fx:id="colObservaciones" prefWidth="91.0" text="Observaciones" />
+                <TableColumn fx:id="colEstadoCivil" prefWidth="106.0" text="Forma de Juego" />
+                <TableColumn fx:id="colJornada" prefWidth="74.0" text="Jornada" />
+                <TableColumn fx:id="colCategoria" prefWidth="75.0" text="Categoría" />
+                <TableColumn fx:id="colObservaciones" prefWidth="102.0" text="Observaciones" />
             </columns>
         </TableView>
       <Label layoutX="125.0" layoutY="6.0" text="SISTEMA DE REGISTRO DE JUGADORES PARA EL CAMPEONATO DE VIDEOJUEGOS DE PELEA" textFill="WHITE" />
