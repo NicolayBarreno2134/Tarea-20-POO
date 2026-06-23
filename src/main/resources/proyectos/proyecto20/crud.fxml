@@ -38,8 +38,8 @@
         <!-- Botones CRUD -->
         <Button layoutX="30" layoutY="420" onAction="#guardar" style="-fx-background-color: #14E0F7;" text="Guardar" />
         <Button layoutX="120" layoutY="420" onAction="#actualizar" style="-fx-background-color: #00F59E;" text="Actualizar" />
-        <Button layoutX="220" layoutY="420" onAction="#eliminar" style="-fx-background-color: #9A03FF;" text="Eliminar" />
-        <Button layoutX="320" layoutY="420" onAction="#limpiar" style="-fx-background-color: #4F03FF;" text="Limpiar" />
+        <Button layoutX="220" layoutY="420" onAction="#eliminar" style="-fx-background-color: #9A03FF;" text="Eliminar" textFill="WHITE" />
+        <Button layoutX="320" layoutY="420" onAction="#limpiar" style="-fx-background-color: #4F03FF;" text="Limpiar" textFill="WHITE" />
 
         <!-- Tabla -->
         <TableView fx:id="tablaParticipantes" layoutX="30" layoutY="470" prefHeight="200" prefWidth="758.0" style="-fx-background-color: #B3D7FF;">
