@@ -53,6 +53,7 @@ public class CRUDController {
 
     @FXML
     private void guardar() {
+        if (!validarFormulario()) return;
         try (Connection con = Conexion.getInstance()) {
             String sql = "INSERT INTO participantes (cedula, nombre, apellido, edad, correo, estado_civil, jornada, categoria, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -77,6 +78,7 @@ public class CRUDController {
 
     @FXML
     private void actualizar() {
+        if (!validarFormulario()) return;
         try (Connection con = Conexion.getInstance()) {
             String sql = "UPDATE participantes SET nombre=?, apellido=?, edad=?, correo=?, estado_civil=?, jornada=?, categoria=?, observaciones=? WHERE cedula=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -162,6 +164,56 @@ public class CRUDController {
         } catch (Exception e) {
             mostrarAlerta("Error al cargar datos: " + e.getMessage(), Alert.AlertType.ERROR);
         }
+    }
+    private boolean validarFormulario() {
+        if (txtCedula.getText().isEmpty() || !txtCedula.getText().matches("\\d+")) {
+            mostrarAlerta("La cédula es obligatoria y debe contener solo números.", Alert.AlertType.WARNING);
+            return false;
+        }
+
+        if (txtNombre.getText().isEmpty()) {
+            mostrarAlerta("El nombre es obligatorio.", Alert.AlertType.WARNING);
+            return false;
+        }
+
+        if (txtApellido.getText().isEmpty()) {
+            mostrarAlerta("El apellido es obligatorio.", Alert.AlertType.WARNING);
+            return false;
+        }
+
+        int edad;
+        try {
+            edad = Integer.parseInt(txtEdad.getText());
+            if (edad < 5) {
+                mostrarAlerta("La edad debe ser mayor a 5 años.", Alert.AlertType.WARNING);
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            mostrarAlerta("La edad debe ser un número válido.", Alert.AlertType.WARNING);
+            return false;
+        }
+
+        String correo = txtCorreo.getText();
+        if (correo.isEmpty() || !correo.contains("@")) {
+            mostrarAlerta("El correo es obligatorio y debe contener '@'.", Alert.AlertType.WARNING);
+            return false;
+        }
+
+        try (Connection con = Conexion.getInstance()) {
+            String sql = "SELECT COUNT(*) FROM participantes WHERE correo=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, correo);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                mostrarAlerta("El correo ya está registrado.", Alert.AlertType.WARNING);
+                return false;
+            }
+        } catch (SQLException e) {
+            mostrarAlerta("Error al validar correo: " + e.getMessage(), Alert.AlertType.ERROR);
+            return false;
+        }
+
+        return true;
     }
 
 }
