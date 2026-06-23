@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="670.0" prefWidth="791.0" style="-fx-background-color: #011063;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectos.proyecto20.CRUD.CRUDController">
+    <children>
+        <!-- Campos de formulario -->
+        <Label layoutX="30" layoutY="30" text="Cédula:" textFill="WHITE" />
+        <TextField fx:id="txtCedula" layoutX="120" layoutY="25" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="70" text="Nombre:" textFill="WHITE" />
+        <TextField fx:id="txtNombre" layoutX="120" layoutY="65" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="110" text="Apellido:" textFill="WHITE" />
+        <TextField fx:id="txtApellido" layoutX="120" layoutY="105" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="150" text="Edad:" textFill="WHITE" />
+        <TextField fx:id="txtEdad" layoutX="120" layoutY="145" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="190" text="Correo:" textFill="WHITE" />
+        <TextField fx:id="txtCorreo" layoutX="120" layoutY="185" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="230" text="Forma de Juego:" textFill="WHITE" />
+        <ComboBox fx:id="cmbEstadoCivil" layoutX="120" layoutY="225" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="270" text="Jornada:" textFill="WHITE" />
+        <RadioButton fx:id="rbMatutina" layoutX="120" layoutY="265" text="Matutina" textFill="WHITE" />
+        <RadioButton fx:id="rbVespertina" layoutX="200" layoutY="265" text="Vespertina" textFill="WHITE" />
+        <RadioButton fx:id="rbNocturna" layoutX="300" layoutY="265" text="Nocturna" textFill="WHITE" />
+
+        <Label layoutX="30" layoutY="310" text="Categoría:" textFill="WHITE" />
+        <ComboBox fx:id="cmbCategoria" layoutX="120" layoutY="305" style="-fx-background-color: #74BAFC;" />
+
+        <Label layoutX="30" layoutY="350" text="Observaciones:" textFill="WHITE" />
+        <TextArea fx:id="txtObservaciones" layoutX="120" layoutY="345" prefHeight="60" prefWidth="250" style="-fx-background-color: #74BAFC;" />
+
+        <!-- Botones CRUD -->
+        <Button layoutX="30" layoutY="420" onAction="#guardar" style="-fx-background-color: #14E0F7;" text="Guardar" />
+        <Button layoutX="120" layoutY="420" onAction="#actualizar" style="-fx-background-color: #00F59E;" text="Actualizar" />
+        <Button layoutX="220" layoutY="420" onAction="#eliminar" style="-fx-background-color: #9A03FF;" text="Eliminar" />
+        <Button layoutX="320" layoutY="420" onAction="#limpiar" style="-fx-background-color: #4F03FF;" text="Limpiar" />
+
+        <!-- Tabla -->
+        <TableView fx:id="tablaParticipantes" layoutX="30" layoutY="470" prefHeight="200" prefWidth="758.0" style="-fx-background-color: #B3D7FF;">
+            <columns>
+                <TableColumn fx:id="colCedula" text="Cédula" />
+                <TableColumn fx:id="colNombre" text="Nombre" />
+                <TableColumn fx:id="colApellido" text="Apellido" />
+                <TableColumn fx:id="colEdad" text="Edad" />
+                <TableColumn fx:id="colCorreo" text="Correo" />
+                <TableColumn fx:id="colEstadoCivil" text="Forma de Juego" />
+                <TableColumn fx:id="colJornada" text="Jornada" />
+                <TableColumn fx:id="colCategoria" text="Categoría" />
+                <TableColumn fx:id="colObservaciones" prefWidth="91.0" text="Observaciones" />
+            </columns>
+        </TableView>
+      <Label layoutX="125.0" layoutY="6.0" text="SISTEMA DE REGISTRO DE JUGADORES PARA EL CAMPEONATO DE VIDEOJUEGOS DE PELEA" textFill="WHITE" />
+    </children>
+</AnchorPane>
